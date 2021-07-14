@@ -1,6 +1,10 @@
 # Preprocessing_xray_scattering_images
 Preprocessing pipeline for xray scattering images to achieve the best possible results in feature detection
 
+# Disclaimer
+
+This repository mainly serves as a public archive for the code used in my Master Thesis and is not yet optimized for the use by other researchers. Future updates will improve the functionality and usability of the program.
+
 # Main Dependencies
 To be able to run the code, a python 3.7 installation with the following dependencies is required:
 - tqdm
