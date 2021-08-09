@@ -1,14 +1,14 @@
 # Preprocessing_xray_scattering_images - Work in progress -
 Preprocessing pipeline for xray scattering images to achieve the best possible results in feature detection
 
-# Disclaimer
+## Disclaimer
 
 This repository mainly serves as a public archive for the code used in my Master Thesis and is not yet optimized for the use by other researchers. Future updates will improve the functionality and usability of the program.
 
-# Main Dependencies
+## Main Dependencies
 To be able to run the code, a python 3.7 installation with the dependencies of the file `requirements.txt` is required.
 
-# Usage
+## Usage
 This Pipeline is for preprocessing of xray scattering images with somehow bad contrasts.
 
 The target is the best possible performance of feature detection. 
