@@ -29,8 +29,8 @@ class PatchLoader(object):
         imgs = [img[point[0]:point[0] + size[0] // 2, point[1]:point[1] + size[1] // 2]
                 for img, point, size in zip(imgs, points, sizes)
                 ]
-        labels = [scale(img, label) for img, label in zip(imgs, labels)]
-        hists = [normalize(np.log(np.histogram(img, bins=bins)[0] + 1))
+        labels = [self.scale(img, label) for img, label in zip(imgs, labels)]
+        hists = [self.normalize(np.log(np.histogram(img, bins=bins)[0] + 1))
                  for img in imgs]
 
         return (
@@ -56,8 +56,8 @@ class PatchLoader(object):
         imgs = [img[point[0]:point[0] + size[0] // 2, point[1]:point[1] + size[1] // 2]
                 for img, point, size in zip(imgs, points, sizes)
                 ]
-        labels = [scale(img, label) for img, label in zip(imgs, labels)]
-        hists = [normalize(np.log(np.histogram(img, bins=bins)[0] + 1))
+        labels = [self.scale(img, label) for img, label in zip(imgs, labels)]
+        hists = [self.normalize(np.log(np.histogram(img, bins=bins)[0] + 1))
                  for img in imgs]
 
         return (
@@ -76,9 +76,9 @@ class PatchLoader(object):
             yield self._get_batch(self._indices[1 + (i * self.batch_size):(i * self.batch_size) + self.batch_size])
 
 
-def normalize(arr):
-    return (arr - arr.min()) / (arr.max() - arr.min())
+    def normalize(arr):
+        return (arr - arr.min()) / (arr.max() - arr.min())
 
 
-def scale(img, labels):
-    return (np.asarray(labels) - img.min()) / (img.max() - img.min())
+    def scale(img, labels):
+        return (np.asarray(labels) - img.min()) / (img.max() - img.min())
