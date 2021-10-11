@@ -1,11 +1,15 @@
 import torch.nn as nn
 import numpy as np
 import matplotlib.pyplot as plt
+
+
 '''Class for applying the trained neural network on an example X-ray scattering image.
 
 Input:  test_img:   The image has to be in form of an numpy array. 
         model:      The trained model should be already loaded (see main.py).
 '''
+
+
 class TestModelPatches(object):
     def __init__(self, model, test_img):
         self.model = model
