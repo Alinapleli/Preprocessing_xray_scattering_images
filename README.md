@@ -17,7 +17,7 @@ Here an approach with supervised learning for the linear clipping method can be 
 For training many images had to be labeled with the values for the lower and the upper limit (normalized to 0,1).
 This labeld dataset is not provided, but can be simple rebuilt with own or puplic datasets of X-ray scattering images (store it as .h5 file; according to read_data.py).
 
-For testing the automated contrast enhancement load the model via  
+For testing the automated contrast enhancement load the model (trained_model.h5) via  
 
     load_model.py
 
