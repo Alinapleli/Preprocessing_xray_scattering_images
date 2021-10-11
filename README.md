@@ -1,4 +1,4 @@
-# Preprocessing_xray_scattering_images -
+# Automated preprocessing X-ray scattering images for contrast enhancement via trained neural network
 Contrast enhancement pipeline for X-ray scattering images to automate preprocessing for linear clipping via trained neural network.
 
 ## Disclaimer
