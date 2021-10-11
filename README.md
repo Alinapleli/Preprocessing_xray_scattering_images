@@ -1,5 +1,5 @@
-# Preprocessing_xray_scattering_images - Work in progress -
-Preprocessing pipeline for xray scattering images to achieve the best possible results in feature detection
+# Preprocessing_xray_scattering_images -
+Contrast enhancement pipeline for X-ray scattering images to automate preprocessing for linear clipping via trained neural network.
 
 ## Disclaimer
 
@@ -9,33 +9,18 @@ This repository mainly serves as a public archive for the code used in my Master
 To be able to run the code, a python 3.7 installation with the dependencies of the file `requirements.txt` is required.
 
 ## Usage
-This Pipeline is for preprocessing of xray scattering images with somehow bad contrasts.
+This pipeline is for preprocessing of X-ray scattering images with bad contrasts.
+Due to different experimental setups of diffraction patterns it is not possible to just find fixed parameters for classical contrast enhancement algorithms.
 
-The target is the best possible performance of feature detection. 
-Because it is not possible to use a common function to enhance the images' quality (because of hot pixel and very various contrasts), an approach with supervised learning is made.
+Here an approach with supervised learning is presented.
 
-In this pipeline the linear clipping is used.
-Therefore the images have to be labeled with the values for the lower and the upper limit.
+In this pipeline the linear clipping method is used.
+For training many images had to be labeled with the values for the lower and the upper limit (normalized to 0,1).
+This labeld dataset is not provided, but can be simple rebuilt with own or puplic datasets of X-ray scattering images (store it as .h5 file; according to read_data.py).
 
-Store it as an .h5 file (according to read_data.py).
+For testing the automated contrast enhancement follow the code in  
 
-Load the data with 
+    main.py
 
-    read_data()
 
-And create datasets of random patches of the experimental images (to get rid of the hot-pixel zones):
-
-    data_loader = PatchLoader.from_data(data, batch_size, bins=bin_size)
-With 3 different data:    
-- train_loader
-- validation_loader
-- test_loader 
-    
-To load the model
-
-    model = SimpleModel().cuda()
-    
-And to start the training process
-
-    patch_trainer = PatchTrainer(model, train_loader, validation_loader,'path_to_save_the_model',  learning_rate)
-    patch_trainer.train(num_of_epochs, num_of_plot_intervall)
+Please feel free to contact me in case of problems, for questions or feedback. 
