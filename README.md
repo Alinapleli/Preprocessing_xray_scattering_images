@@ -1,4 +1,4 @@
-# Automated ontrast enhancement pipeline of X-ray scattering images via machine learning
+# Automated contrast enhancement pipeline of X-ray scattering images via machine learning
 Contrast enhancement pipeline for X-ray scattering images to automate preprocessing for linear clipping via trained neural network.
 
 ## Disclaimer
